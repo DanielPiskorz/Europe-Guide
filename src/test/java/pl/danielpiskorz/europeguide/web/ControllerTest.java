@@ -1,4 +1,4 @@
-package pl.danielpiskorz.europeguide;
+package pl.danielpiskorz.europeguide.web;
 
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -16,6 +16,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
+
+import pl.danielpiskorz.europeguide.domain.Country;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/web-mvc.xml")
@@ -43,12 +45,13 @@ public class ControllerTest {
 	    
 	    @Test
 	    public void countryTest() throws Exception {
+	    	Country poland = new Country("Poland", "Warsaw");
+	    	
 	    	mockMvc.perform(get("/poland"))
 	    	.andExpect(status().isOk())
 	    	.andExpect(view().name("country"))
 	    	.andExpect(model().attributeExists("country"))
-	    	.andExpect(model().attribute("country.name", "Poland"))
-	    	.andExpect(model().attribute("country.capital", "Warsaw"));
+	    	.andExpect(model().attribute("country", poland));
 	    }
 	    
 }
