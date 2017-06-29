@@ -1,0 +1,1 @@
+<h1>Welcome to Europe Guide service!</h1>
