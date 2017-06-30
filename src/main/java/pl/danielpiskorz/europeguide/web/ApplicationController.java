@@ -25,8 +25,17 @@ public class ApplicationController {
 	@RequestMapping(value="/{requestedCountry}", method=RequestMethod.GET)
 	public String country(Model model,
 			@PathVariable String requestedCountry){
-		model.addAttribute("country", countryRepository.getCountry(requestedCountry));
+		
+		Country country = countryRepository.getCountry(
+				requestedCountry.replace("-", " "));
+		
+		if(country != null)
+			model.addAttribute("country", country);
+		else
+			return "notFound";
+		
 		return "country";
 	}
+	
 	
 }

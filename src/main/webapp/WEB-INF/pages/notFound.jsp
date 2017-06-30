@@ -1,0 +1,1 @@
+Country you are looking for does not exist in our european countries repository.

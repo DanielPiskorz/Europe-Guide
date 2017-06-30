@@ -45,19 +45,26 @@ public class ControllerTest {
 	    @Test
 	    public void countryTest() throws Exception {
 	    	Country poland = new Country("Poland", "Warsaw");
-	    	Country bosniaAndHarzegovina = new Country("Bosnia and Herzegovina", "Sarajevo");
+	    	Country bosniaAndHerzegovina = new Country("Bosnia and Herzegovina", "Sarajevo");
 	    	
+	    	//single word name
 	    	mockMvc.perform(get("/poland"))
 	    	.andExpect(status().isOk())
 	    	.andExpect(view().name("country"))
 	    	.andExpect(model().attributeExists("country"))
 	    	.andExpect(model().attribute("country", poland));
 	    	
-	    	mockMvc.perform(get("/bosnia-and-harzegovina"))
+	    	//multi word name
+	    	mockMvc.perform(get("/bosnia-and-herzegovina"))
 	    	.andExpect(status().isOk())
 	    	.andExpect(view().name("country"))
 	    	.andExpect(model().attributeExists("country"))
-	    	.andExpect(model().attribute("country", bosniaAndHarzegovina));
+	    	.andExpect(model().attribute("country", bosniaAndHerzegovina));
+	    	
+	    	//troll attempting to destroy the system
+	    	mockMvc.perform(get("/hahaha-this-app-sucks"))
+	    	.andExpect(status().isOk())
+	    	.andExpect(view().name("notFound"));
 	    }
 	    
 }

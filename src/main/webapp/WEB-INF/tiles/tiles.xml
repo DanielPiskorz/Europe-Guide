@@ -11,4 +11,7 @@
 	<definition name="country" extends="base">
 		<put-attribute name="body" value="/WEB-INF/pages/country.jsp" />
 	</definition>
+		<definition name="notFound" extends="base">
+		<put-attribute name="body" value="/WEB-INF/pages/notFound.jsp" />
+	</definition>
 </tiles-definitions>

@@ -3,6 +3,7 @@ package pl.danielpiskorz.europeguide.data;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.springframework.stereotype.Service;
 
@@ -60,11 +61,13 @@ public class ListOfCountries implements CountryRepository{
 			new Country("Vatican City", "Vatican City")
 			));
 	
+	@Override
 	public Country getCountry(String name) {
-		return list.stream()
-				.filter(country -> country.getName().equalsIgnoreCase(name))
+		 Country country =  list.stream()
+				.filter(c -> c.getName().equalsIgnoreCase(name))
 				.findFirst()
 				.orElse(null);
+		 return country;
 	}
 
 }
