@@ -24,7 +24,6 @@ import pl.danielpiskorz.europeguide.domain.Country;
 @WebAppConfiguration
 public class ControllerTest {
 
-	
 	   private MockMvc mockMvc;
 
 	    @SuppressWarnings("SpringJavaAutowiringInspection")
