@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import pl.danielpiskorz.europeguide.domain.Country;
 
+@Service
 public class ListOfCountries implements CountryRepository{
 
 	private List<Country> list= new ArrayList<>(Arrays.asList(
