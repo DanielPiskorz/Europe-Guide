@@ -45,12 +45,19 @@ public class ControllerTest {
 	    @Test
 	    public void countryTest() throws Exception {
 	    	Country poland = new Country("Poland", "Warsaw");
+	    	Country bosniaAndHarzegovina = new Country("Bosnia and Herzegovina", "Sarajevo");
 	    	
 	    	mockMvc.perform(get("/poland"))
 	    	.andExpect(status().isOk())
 	    	.andExpect(view().name("country"))
 	    	.andExpect(model().attributeExists("country"))
 	    	.andExpect(model().attribute("country", poland));
+	    	
+	    	mockMvc.perform(get("/bosnia-and-harzegovina"))
+	    	.andExpect(status().isOk())
+	    	.andExpect(view().name("country"))
+	    	.andExpect(model().attributeExists("country"))
+	    	.andExpect(model().attribute("country", bosniaAndHarzegovina));
 	    }
 	    
 }

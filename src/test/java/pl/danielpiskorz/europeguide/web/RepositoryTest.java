@@ -34,8 +34,12 @@ public class RepositoryTest {
 	public void repositoryTest(){
 		Country slovakia = 	new Country("Slovakia", "Bratislava");
 		Country germany = new Country("Germany", "Berlin");
+		Country czechRepublic = new Country("Czech Republic", "Prague");
+		Country sanMarino = new Country("San Marino", "San Marino");
 		
 		assertEquals(countryRepository.getCountry("slovakia"), slovakia);
 		assertEquals(countryRepository.getCountry("germany"), germany);
+		assertEquals(countryRepository.getCountry("czech republic"), czechRepublic);
+		assertEquals(countryRepository.getCountry("san marino"), sanMarino);
 	}
 }
