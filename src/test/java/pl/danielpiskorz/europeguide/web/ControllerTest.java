@@ -20,7 +20,7 @@ import org.springframework.web.context.WebApplicationContext;
 import pl.danielpiskorz.europeguide.domain.Country;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/web-mvc.xml")
+@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/appContext.xml")
 @WebAppConfiguration
 public class ControllerTest {
 
