@@ -1,14 +1,34 @@
 package pl.danielpiskorz.europeguide.domain;
 
-public class Country {
+import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="country")
+public class Country implements Serializable{
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	
+	@Column(name="name")
 	String name;
+	@Column(name="capital")
 	String capital;
 
 	public Country(String name, String capital) {
 		this.name = name;
 		this.capital = capital;
 	}
+	
+	public Country(){};
 
 	public String getName() {
 		return name;
