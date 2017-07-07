@@ -3,13 +3,12 @@ package pl.danielpiskorz.europeguide.data;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.springframework.stereotype.Service;
 
 import pl.danielpiskorz.europeguide.domain.Country;
 
-@Service
+//@Service
 public class ListOfCountries implements CountryRepository{
 
 	private List<Country> list= new ArrayList<>(Arrays.asList(
@@ -63,10 +62,10 @@ public class ListOfCountries implements CountryRepository{
 	
 	@Override
 	public Country getCountry(String name) {
-		 Country country =  list.stream()
-				.filter(c -> c.getName().equalsIgnoreCase(name))
-				.findFirst()
-				.orElse(null);
+		Country country =  list.stream()
+			.filter(c -> c.getName().equalsIgnoreCase(name))
+			.findFirst()
+			.orElse(null);
 		 return country;
 	}
 
