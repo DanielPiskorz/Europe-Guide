@@ -22,10 +22,13 @@ public class Country implements Serializable{
 	String name;
 	@Column(name="capital")
 	String capital;
+	@Column(name="flag")
+	String flag;
 
-	public Country(String name, String capital) {
+	public Country(String name, String capital, String flag) {
 		this.name = name;
 		this.capital = capital;
+		this.flag = flag;
 	}
 	
 	public Country(){};
@@ -46,9 +49,18 @@ public class Country implements Serializable{
 		this.capital = capital;
 	}
 
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
+	}
+
+	
 	@Override
 	public String toString() {
-		return "Country [name=" + name + ", capital=" + capital + "]";
+		return "Country [id=" + id + ", name=" + name + ", capital=" + capital + ", flag=" + flag + "]";
 	}
 
 	@Override
@@ -56,6 +68,7 @@ public class Country implements Serializable{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((capital == null) ? 0 : capital.hashCode());
+		result = prime * result + ((flag == null) ? 0 : flag.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
@@ -74,6 +87,11 @@ public class Country implements Serializable{
 				return false;
 		} else if (!capital.equals(other.capital))
 			return false;
+		if (flag == null) {
+			if (other.flag != null)
+				return false;
+		} else if (!flag.equals(other.flag))
+			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
@@ -82,5 +100,4 @@ public class Country implements Serializable{
 		return true;
 	}
 
-	
 }
