@@ -24,11 +24,14 @@ public class Country implements Serializable{
 	String capital;
 	@Column(name="flag")
 	String flag;
+	@Column(name="emblem")
+	String emblem;
 
-	public Country(String name, String capital, String flag) {
+	public Country(String name, String capital, String flag, String emblem) {
 		this.name = name;
 		this.capital = capital;
 		this.flag = flag;
+		this.emblem = emblem;
 	}
 	
 	public Country(){};
@@ -56,11 +59,18 @@ public class Country implements Serializable{
 	public void setFlag(String flag) {
 		this.flag = flag;
 	}
-
 	
+	public String getEmblem() {
+		return emblem;
+	}
+
+	public void setEmblem(String emblem) {
+		this.emblem = emblem;
+	}
+
 	@Override
 	public String toString() {
-		return "Country [id=" + id + ", name=" + name + ", capital=" + capital + ", flag=" + flag + "]";
+		return "Country [id=" + id + ", name=" + name + ", capital=" + capital + ", flag=" + flag + ", emblem=" + emblem + "]";
 	}
 
 	@Override

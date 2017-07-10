@@ -44,8 +44,8 @@ public class ControllerTest {
 	    
 	    @Test
 	    public void countryTest() throws Exception {
-	    	Country poland = new Country("Poland", "Warsaw", "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/800px-Flag_of_Poland.svg.png");
-	    	Country bosniaAndHerzegovina = new Country("Bosnia and Herzegovina", "Sarajevo", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/800px-Flag_of_Bosnia_and_Herzegovina.svg.png");
+	    	Country poland = new Country("Poland", "Warsaw", "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/800px-Flag_of_Poland.svg.png", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Herb_Polski.svg/509px-Herb_Polski.svg.png");
+	    	Country bosniaAndHerzegovina = new Country("Bosnia and Herzegovina", "Sarajevo", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/800px-Flag_of_Bosnia_and_Herzegovina.svg.png", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Coat_of_arms_of_Bosnia_and_Herzegovina.svg/525px-Coat_of_arms_of_Bosnia_and_Herzegovina.svg.png");
 	    	
 	    	//single word name
 	    	mockMvc.perform(get("/poland"))

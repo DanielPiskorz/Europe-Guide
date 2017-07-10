@@ -2,3 +2,4 @@
 <p>Name: ${country.name}</p>
 <p>Capital: ${country.capital}</p>
 <p><img src="${country.flag}" /></p>
+<p><img src="${country.emblem}" /></p>
