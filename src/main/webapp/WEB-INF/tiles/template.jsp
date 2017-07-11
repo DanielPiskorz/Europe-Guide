@@ -5,8 +5,7 @@
 <html>
   <head>
     <title>Europe Guide</title>
-    <link rel="stylesheet" 
-          type="text/css" 
+    <link rel="stylesheet" type="text/css" 
           href="<s:url value="/resources/style.css" />" >
   </head>
   <body>
