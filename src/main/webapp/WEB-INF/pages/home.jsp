@@ -1,5 +1,12 @@
-<h1>Welcome to Europe Guide service!</h1>
-<input name="countryName" id="countryName" />
-<button onclick='window.location.href = 
-	document.URL + document.getElementById("countryName").value
-	.trim().toLowerCase().replace(" ", "-");'>Take me there!</button>
+<div id="container">
+	<div id="header">
+		<h1>Travel the world,</h1>
+		<h2> there's nothing to wait for!</h2>
+	</div>
+	<h3 id="advice">Let's start with Europe!</h3>
+	<p><input id="countryNameTF" /></p>
+	<button id="redirectingButton" onclick='window.location.href =
+	document.URL + document.getElementById("countryNameTF").value
+	.trim().toLowerCase().replace(" ", "-").replace(" ", "-").replace("&", "and");
+	'>Take me there!</button>
+</div>
