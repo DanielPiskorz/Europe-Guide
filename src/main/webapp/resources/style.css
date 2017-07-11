@@ -12,8 +12,12 @@ body{
 	background-position: top center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 100%;
-	width: 100%
+	height: 100vh;
+	width: 100vw;
+}
+
+#content{
+	margin-top: 1.5%;
 }
 
 /* HOMEPAGE START */
@@ -26,16 +30,19 @@ body{
 	margin: auto;
 	top: 0; left: 0; bottom: 0; right: 0;
 	text-align: center;
+	width: 80%;
 
 }
 
 #header, #advice{
 	font-family: 'Pacifico', cursive;
-   /* font-size: 2vw;*/
-    font-size: 28px;
     margin: 2%;
+    font-size:28px;
 }
 
+#header{
+	margin-top: -10px;
+}
 
 #advice{
 	color: #001e33;
@@ -50,7 +57,7 @@ body{
 }
 
 #redirectingButton{
-	width: 140px;
+	width: 200px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5%;
@@ -65,3 +72,25 @@ body{
     box-shadow: 0 5px #999;
 }
 /* HOMEPAGE END */
+/* COUNTRY PAGE START*/
+
+.mainPanel{
+	background: rgba(0,0,0,0.5);
+	border-radius: 30px;
+	border: 5px solid white;
+	padding: 20px;
+	border-radius: 30px;
+	border: 5px solid white;
+	margin: 2% ;
+	color:white;
+	padding: 2%;
+}
+
+
+#emblem{
+	height: 90px;
+	margin: 0 1.7% ;
+}
+
+/*COUNTRY PAGE END */
+

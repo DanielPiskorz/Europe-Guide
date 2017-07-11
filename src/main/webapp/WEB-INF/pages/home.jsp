@@ -1,7 +1,7 @@
 <div id="container">
 	<div id="header">
 		<h1>Travel the world,</h1>
-		<h2> there's nothing to wait for!</h2>
+		<h1> there's nothing to wait for!</h1>
 	</div>
 	<h3 id="advice">Let's start with Europe!</h3>
 	<p><input id="countryNameTF" placeholder="type the name of country" /></p>
