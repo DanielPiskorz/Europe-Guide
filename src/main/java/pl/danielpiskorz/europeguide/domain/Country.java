@@ -13,18 +13,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name="country")
 public class Country implements Serializable{
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
 	
-	@Column(name="name")
+	@Id
 	String name;
-	@Column(name="capital")
+	@Column
 	String capital;
-	@Column(name="flag")
+	@Column
 	String flag;
-	@Column(name="emblem")
+	@Column
 	String emblem;
 
 	public Country(String name, String capital, String flag, String emblem) {
@@ -70,7 +66,7 @@ public class Country implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Country [id=" + id + ", name=" + name + ", capital=" + capital + ", flag=" + flag + ", emblem=" + emblem + "]";
+		return "Country [name=" + name + ", capital=" + capital + ", flag=" + flag + ", emblem=" + emblem + "]";
 	}
 
 	@Override
