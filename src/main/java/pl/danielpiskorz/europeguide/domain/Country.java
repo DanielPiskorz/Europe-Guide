@@ -18,19 +18,12 @@ public class Country implements Serializable{
 	String name;
 	@Column
 	String capital;
+	@Column 
+	String currency;
 	@Column
 	String flag;
 	@Column
 	String emblem;
-
-	public Country(String name, String capital, String flag, String emblem) {
-		this.name = name;
-		this.capital = capital;
-		this.flag = flag;
-		this.emblem = emblem;
-	}
-	
-	public Country(){};
 
 	public String getName() {
 		return name;
@@ -46,6 +39,14 @@ public class Country implements Serializable{
 
 	public void setCapital(String capital) {
 		this.capital = capital;
+	}
+	
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
 	}
 
 	public String getFlag() {
@@ -65,15 +66,12 @@ public class Country implements Serializable{
 	}
 
 	@Override
-	public String toString() {
-		return "Country [name=" + name + ", capital=" + capital + ", flag=" + flag + ", emblem=" + emblem + "]";
-	}
-
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((capital == null) ? 0 : capital.hashCode());
+		result = prime * result + ((currency == null) ? 0 : currency.hashCode());
+		result = prime * result + ((emblem == null) ? 0 : emblem.hashCode());
 		result = prime * result + ((flag == null) ? 0 : flag.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -93,6 +91,16 @@ public class Country implements Serializable{
 				return false;
 		} else if (!capital.equals(other.capital))
 			return false;
+		if (currency == null) {
+			if (other.currency != null)
+				return false;
+		} else if (!currency.equals(other.currency))
+			return false;
+		if (emblem == null) {
+			if (other.emblem != null)
+				return false;
+		} else if (!emblem.equals(other.emblem))
+			return false;
 		if (flag == null) {
 			if (other.flag != null)
 				return false;
@@ -105,5 +113,7 @@ public class Country implements Serializable{
 			return false;
 		return true;
 	}
+
+
 
 }
