@@ -82,80 +82,94 @@ VALUES
 
 
 CREATE TABLE `languages`(
-	`name` varchar (32) NOT NULL PRIMARY KEY,
-	`lang1` varchar (32) DEFAULT NULL,
-	`lang2` varchar (32) DEFAULT NULL,
-	`lang3` varchar (32) DEFAULT NULL
+	`name` varchar (32) NOT NULL,
+	`language` varchar (32) NOT NULL
 );
 
 INSERT INTO languages
-	(name, lang1, lang2, lang3)
+	(name, language)
 VALUES
-	('Albania', 'Albanian', null, null),
-	('Andorra', 'Catalan', null, null),
-	('Armenia', 'Armenian', null, null),
-	('Austria', 'German', null, null),
-	('Azerbaijan', 'Azerbaijani', null, null),
+	('Albania', 'Albanian'),
+	('Andorra', 'Catalan'),
+	('Armenia', 'Armenian'),
+	('Austria', 'German'),
+	('Azerbaijan', 'Azerbaijani'),
 
-	('Belarus', 'Belarusian', 'Russian', null),
-	('Belgium', 'German', 'French', 'Dutch'),
-	('Bosnia and Herzegovina', 'Bosnian', 'Croatian', 'Serbian'),
-	('Bulgaria', 'Bulgarian', null, null),
+	('Belarus', 'Belarusian'),
+	('Belarus', 'Russian'),
+	('Belgium', 'German'),
+	('Belgium', 'French'),
+	('Belgium', 'Dutch'),
+	('Bosnia and Herzegovina', 'Bosnian'),
+	('Bosnia and Herzegovina', 'Croatian'),
+	('Bosnia and Herzegovina', 'Serbian'),
+	('Bulgaria', 'Bulgarian'),
 
-	('Croatia', 'Croatian', null, null),
-	('Cyprus', 'Greek', 'Turkish', null),
-	('Czech Republic', 'Czech', 'Slovak', null),
+	('Croatia', 'Croatian'),
+	('Cyprus', 'Greek'),
+	('Cyprus', 'Turkish'),
+
+	('Czech Republic', 'Czech'),
+	('Czech Republic', 'Slovak'),
  
-	('Denmark', 'Danish', null, null),
+	('Denmark', 'Danish'),
  
-	('Estonia', 'Estonian', null, null),
+	('Estonia', 'Estonian'),
 
-	('Finland', 'Finnish', 'Swedish', null),
-	('France', 'French', null, null),
+	('Finland', 'Finnish'),
+	('Finland', 'Swedish'),
+	('France', 'French'),
 
-	('Georgia',  'Georgian', null, null),
-	('Germany', 'German',  null, null),
-	('Greece', 'Greek', null, null),
+	('Georgia',  'Georgian'),
+	('Germany', 'German'),
+	('Greece', 'Greek'),
 
-	('Hungary', 'Hungarian', null, null),
+	('Hungary', 'Hungarian'),
 
-	('Iceland', 'Icelandic', null, null),
-	('Ireland', 'Irish', 'English', null),
-	('Italy', 'Italian', null, null),
+	('Iceland', 'Icelandic'),
+	('Ireland', 'Irish'),
+	('Ireland', 'English'),
+	('Italy', 'Italian'),
 
-	('Kosovo', 'Albanian', 'Serbian', null),
+	('Kosovo', 'Albanian'),
+	('Kosovo', 'Serbian'),
 
-	('Latvia', 'Latvian', null, null),
-	('Liechtenstein', 'German',  null, null),
-	('Lithuania', 'Lithuanian', null, null),
-	('Luxembourg', 'Luxembourgish', 'German', 'French'),
+	('Latvia', 'Latvian'),
+	('Liechtenstein', 'German'),
+	('Lithuania', 'Lithuanian'),
+	('Luxembourg', 'Luxembourgish'),
+	('Luxembourg', 'German'),
+	('Luxembourg', 'French'),
 
-	('Macedonia', 'Macedonian', null, null),
-	('Malta', 'Maltese', 'English', null),
-	('Moldova',  'Romanian', null, null),
-	('Monaco', 'French', null, null),
-	('Montenegro', 'Montenegrin', null, null),
+	('Macedonia', 'Macedonian'),
+	('Malta', 'Maltese'),
+	('Malta', 'English'),
+	('Moldova',  'Romanian'),
+	('Monaco', 'French'),
+	('Montenegro', 'Montenegrin'),
 
-	('Netherlands', 'Dutch', null, null),
-	('Norway', 'Norwegian', null, null), 
+	('Netherlands', 'Dutch'),
+	('Norway', 'Norwegian'), 
 
-	('Poland', 'Polish', null, null),
-	('Portugal', 'Portuguese', null, null),
+	('Poland', 'Polish'),
+	('Portugal', 'Portuguese'),
 
-	('Romania', 'Romanian', null, null),
-	('Russia', 'Russian', null, null),
+	('Romania', 'Romanian'),
+	('Russia', 'Russian'),
 
-	('San Marino', 'Italian', null, null),
-	('Serbia', 'Serbian', null, null),
-	('Slovakia', 'Slovak', null, null),
-	('Slovenia', 'Slovene', null, null),
-	('Spain', 'Spanish', null, null),
-	('Sweden', 'Swedish', null, null),
-	('Switzerland', 'German', 'French', 'Italian'),
+	('San Marino', 'Italian'),
+	('Serbia', 'Serbian'),
+	('Slovakia', 'Slovak'),
+	('Slovenia', 'Slovene'),
+	('Spain', 'Spanish'),
+	('Sweden', 'Swedish'),
+	('Switzerland', 'German'),
+	('Switzerland', 'French'),
+	('Switzerland', 'Italian'),
 
-	('Turkey', 'Turkish', null, null),
+	('Turkey', 'Turkish'),
 
-	('Ukraine', 'Ukrainian', null, null),
-	('United Kingdom', 'English', null, null),
+	('Ukraine', 'Ukrainian'),
+	('United Kingdom', 'English'),
 
-	('Vatican City', 'Italian', null, null);
+	('Vatican City', 'Italian');

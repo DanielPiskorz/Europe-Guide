@@ -7,6 +7,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
+import java.util.Arrays;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -50,12 +52,15 @@ public class ControllerTest {
 	    	poland.setCurrency("PLN");
 	    	poland.setFlag("https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/800px-Flag_of_Poland.svg.png");
 	    	poland.setEmblem("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Herb_Polski.svg/509px-Herb_Polski.svg.png");
+	    	poland.setLanguages(Arrays.asList("Polish"));
 	    	Country bosniaAndHerzegovina = new Country();
 	    	bosniaAndHerzegovina.setName("Bosnia and Herzegovina");
 	    	bosniaAndHerzegovina.setCapital("Sarajevo");
 	    	bosniaAndHerzegovina.setCurrency("BAM");
 	    	bosniaAndHerzegovina.setFlag("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/800px-Flag_of_Bosnia_and_Herzegovina.svg.png");
 	    	bosniaAndHerzegovina.setEmblem("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Coat_of_arms_of_Bosnia_and_Herzegovina.svg/525px-Coat_of_arms_of_Bosnia_and_Herzegovina.svg.png");
+	    	bosniaAndHerzegovina.setLanguages(Arrays.asList("Bosnian", "Croatian", "Serbian"));
+	    	
 	    	//single word name
 	    	mockMvc.perform(get("/poland"))
 	    	.andExpect(status().isOk())

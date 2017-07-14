@@ -1,12 +1,14 @@
 package pl.danielpiskorz.europeguide.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 
@@ -24,6 +26,11 @@ public class Country implements Serializable{
 	String flag;
 	@Column
 	String emblem;
+	
+	@ElementCollection
+	@CollectionTable(name="country_languages", joinColumns=@JoinColumn(name="name"))
+	@Column(name="language")
+	List<String> languages;
 
 	public String getName() {
 		return name;
@@ -64,6 +71,15 @@ public class Country implements Serializable{
 	public void setEmblem(String emblem) {
 		this.emblem = emblem;
 	}
+	
+	
+	public List<String> getLanguages() {
+		return languages;
+	}
+
+	public void setLanguages(List<String> languages) {
+		this.languages = languages;
+	}
 
 	@Override
 	public int hashCode() {
@@ -73,6 +89,7 @@ public class Country implements Serializable{
 		result = prime * result + ((currency == null) ? 0 : currency.hashCode());
 		result = prime * result + ((emblem == null) ? 0 : emblem.hashCode());
 		result = prime * result + ((flag == null) ? 0 : flag.hashCode());
+		result = prime * result + ((languages == null) ? 0 : languages.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
@@ -106,6 +123,11 @@ public class Country implements Serializable{
 				return false;
 		} else if (!flag.equals(other.flag))
 			return false;
+		if (languages == null) {
+			if (other.languages != null)
+				return false;
+		} else if (!languages.equals(other.languages))
+			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
@@ -113,7 +135,5 @@ public class Country implements Serializable{
 			return false;
 		return true;
 	}
-
-
 
 }

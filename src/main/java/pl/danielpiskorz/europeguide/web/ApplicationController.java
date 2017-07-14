@@ -16,26 +16,23 @@ public class ApplicationController {
 
 	@Autowired
 	CountryRepository countryRepository;
-	
-	@RequestMapping(method=RequestMethod.GET)
-	public String home(){
+
+	@RequestMapping(method = RequestMethod.GET)
+	public String home() {
 		return "home";
 	}
-	
-	@RequestMapping(value="/{requestedCountry}", method=RequestMethod.GET)
-	public String country(Model model,
-			@PathVariable String requestedCountry){
-		
-		Country country = countryRepository.getCountry(
-				requestedCountry.replace("-", " "));
-		
-		if(country != null)
+
+	@RequestMapping(value = "/{requestedCountry}", method = RequestMethod.GET)
+	public String country(Model model, @PathVariable String requestedCountry) {
+
+		try {
+			Country country = countryRepository.getCountry(requestedCountry.replace("-", " "));
 			model.addAttribute("country", country);
-		else
+		} catch (Exception exc) {
 			return "notFound";
-		
+		}
+
 		return "country";
 	}
-	
-	
+
 }

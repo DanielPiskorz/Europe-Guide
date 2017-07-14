@@ -2,7 +2,8 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="t"%>
 <%@ page session="false" contentType="text/html; charset=UTF-8"%>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 <title>Europe Guide</title>
