@@ -9,6 +9,8 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 
@@ -17,21 +19,49 @@ import javax.persistence.Table;
 public class Country implements Serializable{
 	
 	@Id
-	String name;
+	private String name;
 	@Column
-	String capital;
+	private String capital;
 	@Column 
-	String currency;
+	private String currency;
 	@Column
-	String flag;
+	private String flag;
 	@Column
-	String emblem;
+	private String emblem;
 	
 	@ElementCollection
 	@CollectionTable(name="country_languages", joinColumns=@JoinColumn(name="name"))
 	@Column(name="language")
-	List<String> languages;
-
+	private List<String> languages;
+	
+	@ManyToMany
+	@JoinTable(name="neighbouring_countries",
+	 joinColumns=@JoinColumn(name="neighbour1"),
+	 inverseJoinColumns=@JoinColumn(name="neighbour2")
+	)
+	private List<Country> neighbours;
+	
+	/*
+	 * To avoid neighbourhood duplicates in neighbouring_countries
+	 * table, both columns have to be scanned.
+	 * Therefore two list have to be created.
+	 */
+	@ManyToMany
+	@JoinTable(name="neighbouring_countries",
+	 joinColumns=@JoinColumn(name="neighbour2"),
+	 inverseJoinColumns=@JoinColumn(name="neighbour1")
+	)
+	private List<Country> neighbours2;
+	
+	/*
+	 * Neighbouring countries from second column
+	 * are added to main list in this simple method.
+	 */
+	public void updateNeighbours(){
+		neighbours.addAll(neighbours2);
+	}
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -80,6 +110,27 @@ public class Country implements Serializable{
 	public void setLanguages(List<String> languages) {
 		this.languages = languages;
 	}
+	
+
+	public List<Country> getNeighbours() {
+		return neighbours;
+	}
+
+
+	public void setNeighbours(List<Country> neighbours) {
+		this.neighbours = neighbours;
+	}
+
+
+	/*
+	 * neighbours2 is and ancillary list and should not be
+	 * used outside of this class, therefore getter is not avaible
+	 */
+
+	public void setNeighbours2(List<Country> neighbours2) {
+		this.neighbours2 = neighbours2;
+	}
+
 
 	@Override
 	public int hashCode() {

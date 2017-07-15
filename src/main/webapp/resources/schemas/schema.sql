@@ -81,12 +81,12 @@ VALUES
 
 
 
-CREATE TABLE `languages`(
+CREATE TABLE `country_languages`(
 	`name` varchar (32) NOT NULL,
 	`language` varchar (32) NOT NULL
 );
 
-INSERT INTO languages
+INSERT INTO country_languages
 	(name, language)
 VALUES
 	('Albania', 'Albanian'),
