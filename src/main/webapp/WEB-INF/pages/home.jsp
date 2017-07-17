@@ -6,7 +6,6 @@
 	<h3 id="advice">Let's start with Europe!</h3>
 	<p><input id="countryNameTF" placeholder="type the name of country" /></p>
 	<button id="redirectingButton" onclick='window.location.href =
-	document.URL + document.getElementById("countryNameTF").value
-	.trim().toLowerCase().replace(" ", "-").replace(" ", "-").replace("&", "and");
+	document.URL + toId(document.getElementById("countryNameTF").value);
 	'>Take me there!</button>
 </div>

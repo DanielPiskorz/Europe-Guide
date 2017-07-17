@@ -22,7 +22,7 @@
 				</div>
 			</div>
 			<div class="mainPanel">
-				<div class="panel-heading">Languages</div>
+				<div class="panel-heading">Official languages</div>
 				<div class="panel-body" id="languages">
 					<c:forEach items="${country.languages}" var="language">
 					<h2>${language}</h2>
@@ -44,8 +44,8 @@
 				<div class="panel-heading">Visit the neighbours</div>
 				<div class="panel-body">
 					<c:forEach items="${country.neighbours}" var="neighbour">
-					<a href="">
-						<div class="neighbour">
+					
+						<div class="neighbour" onclick='window.location.href = toId("${neighbour.name}")'>
 							<div class="neighEmblemDiv">
 								<img class="neighbourEmblem" src="${neighbour.emblem}"/>
 							</div>
@@ -53,7 +53,7 @@
 								<p class="neighbourName">${neighbour.name}</p>
 							</div>
 						</div>
-					</a>
+					
 					</c:forEach>				
 				</div>
 			</div>
