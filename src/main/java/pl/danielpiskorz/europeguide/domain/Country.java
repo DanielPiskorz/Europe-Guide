@@ -123,8 +123,8 @@ public class Country implements Serializable{
 
 
 	/*
-	 * neighbours2 is and ancillary list and should not be
-	 * used outside of this class, therefore getter is not avaible
+	 * neighbours2 is an ancillary list and should not be
+	 * used outside of this class, therefore getter is not available.
 	 */
 
 	public void setNeighbours2(List<Country> neighbours2) {

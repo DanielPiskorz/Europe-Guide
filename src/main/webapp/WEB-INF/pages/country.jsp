@@ -6,9 +6,9 @@
 			<img id="emblem" src="${country.emblem}" /> <span id="name">${country.name}</span>
 		</h1>
 	</div>
+	
 	<div class="row">
-
-		<div class="col-lg-5">
+		<div class="col-lg-4">
 			<div class="mainPanel">
 				<div class="panel-heading">Capital</div>
 				<div class="panel-body">
@@ -24,22 +24,39 @@
 			<div class="mainPanel">
 				<div class="panel-heading">Languages</div>
 				<div class="panel-body" id="languages">
-				 	<c:forEach items="${country.languages}" var="language">
-						<h2>${language}</h2>
+					<c:forEach items="${country.languages}" var="language">
+					<h2>${language}</h2>
 					</c:forEach>
 				</div>
 			</div>
-		<div class="col-lg-7">
+		</div>
+		<div class="col-lg-4">
 			<div class="mainPanel">
 				<div class="panel-heading">Flag</div>
-				<div class="panel-body">
+				<div class="panel-body" align="center">
 					<img id="flag"
-						src="${country.flag}" />
+					src="${country.flag}" />
 				</div>
 			</div>
 		</div>
-
+		<div class="col-lg-4">
+			<div class="mainPanel">
+				<div class="panel-heading">Visit the neighbours</div>
+				<div class="panel-body">
+					<c:forEach items="${country.neighbours}" var="neighbour">
+					<a href="">
+						<div class="neighbour">
+							<div class="neighEmblemDiv">
+								<img class="neighbourEmblem" src="${neighbour.emblem}"/>
+							</div>
+							<div>
+								<p class="neighbourName">${neighbour.name}</p>
+							</div>
+						</div>
+					</a>
+					</c:forEach>				
+				</div>
+			</div>
+		</div>
 	</div>
-
-
 </div>
