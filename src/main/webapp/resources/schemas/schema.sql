@@ -250,7 +250,6 @@ VALUES
 	('Hungary', 'Slovenia'),
 	('Hungary', 'Ukraine'),
 	('Ireland', 'United Kingdom'),
-	('Italy', 'France'),
 	('Italy', 'San Marino'),
 	('Italy', 'Slovenia'),
 	('Italy', 'Switzerland'),

@@ -22,9 +22,8 @@ public class HibernateCountryRepository implements CountryRepository {
 		Country country = (Country) em.createQuery("from Country where name = :name")
                 .setParameter("name", name).getSingleResult();
 		em.getTransaction().commit();
+		em.close();
 		country.updateNeighbours();
-		for(Country c : country.getNeighbours())
-		System.out.println(c.getName());
 		return country;
 	}
 	
