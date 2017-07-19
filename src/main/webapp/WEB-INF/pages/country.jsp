@@ -1,7 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <script type="text/javascript">
 	document.title = "${country.name} - Europe Guide"
-	$("link[rel='shortcut icon']").attr("href", "${country.flag}");
+	
+	//$("link[rel='shortcut icon']").attr("href", "${country.flag}");
+	//flags as icons don't look good, code if there was a better idea for an icon 
+	
+	$('body').css('background', 'url("resources/backgrounds/${country.name}.jpg")');  
 </script>
 
 <div class="container">
@@ -43,6 +48,7 @@
 					src="${country.flag}" />
 				</div>
 			</div>
+			
 		</div>
 		<div class="col-lg-4">
 			<div class="mainPanel">
