@@ -5,8 +5,14 @@
 	
 	//$("link[rel='shortcut icon']").attr("href", "${country.flag}");
 	//flags as icons don't look good, code if there was a better idea for an icon 
+	$('document').ready(function () {
+		$('body').css('background-image', 'url("resources/backgrounds/${country.name}.jpg")');
+		$('#HudHider').click(function () {
+			$('.container').fadeOut("slow").delay(3000).fadeIn("slow");
+		});
+		$('footer').load("resources/footer.html"); 
+	});
 	
-	$('body').css('background', 'url("resources/backgrounds/${country.name}.jpg")');  
 </script>
 
 <div class="container">
@@ -48,7 +54,15 @@
 					src="${country.flag}" />
 				</div>
 			</div>
-			
+			<div class="mainPanel">
+				<div class="panel-heading">Hide the HUD</div>
+				<div id="HudHider" class="panel-body" align="center">
+					<h3>Let's enjoy the view!</h3>
+				</div>
+			</div>
+			<script type="text/javascript">
+				
+			</script>
 		</div>
 		<div class="col-lg-4">
 			<div class="mainPanel">
@@ -64,10 +78,11 @@
 								<p class="neighbourName">${neighbour.name}</p>
 							</div>
 						</div>
-					
+						
 					</c:forEach>				
 				</div>
 			</div>
 		</div>
 	</div>
+	<footer/>
 </div>

@@ -28,7 +28,5 @@
 	<div id="content">
 		<t:insertAttribute name="body" />
 	</div>
-
 </body>
-
 </html>

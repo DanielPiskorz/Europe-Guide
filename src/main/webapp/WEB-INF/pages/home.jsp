@@ -1,3 +1,8 @@
+<script>
+	$('document').ready(function () {
+		$('footer').load("resources/footer.html"); 
+	});
+</script>
 <div id="container">
 	<div id="header">
 		<h1>Travel the world,</h1>
@@ -7,5 +12,5 @@
 	<p><input id="countryNameTF" placeholder="type the name of country" /></p>
 	<button id="redirectingButton" onclick='window.location.href =
 	document.URL + toId(document.getElementById("countryNameTF").value);
-	'>Take me there!</button>
+	'>TAKE ME THERE</button>
 </div>
